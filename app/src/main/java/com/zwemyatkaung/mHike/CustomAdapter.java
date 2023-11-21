@@ -46,6 +46,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return new MyViewHolder(view);
     }
 
+    public void filterList(ArrayList<String> filteredId, ArrayList<String> filteredName,ArrayList<String> filteredLocation,ArrayList<String> filteredDate,ArrayList<String> filteredParking,ArrayList<String> filteredLength,ArrayList<String> filteredDuration,ArrayList<String> filteredWeather,ArrayList<String> filteredDiffculty,ArrayList<String> filteredDescription) {
+        id = filteredId;
+        name = filteredName;
+        location = filteredLocation;
+        date=filteredDate;
+        parking=filteredParking;
+        length=filteredLength;
+        duration=filteredDuration;
+        weather=filteredWeather;
+        difficulty=filteredDiffculty;
+        description=filteredDescription;
+        notifyDataSetChanged();
+    }
+
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.id.setText(String.valueOf(id.get(position)));
